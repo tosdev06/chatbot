@@ -423,38 +423,9 @@
     </div>
 
     <script>
-        const GEMINI_API_KEY = 'AIzaSyA6Ca81blHXcBSanRRlgTR5Ha_b5VM6SIE';
+        const GEMINI_API_KEY = '  ';
         
-        const tosdevBio = `Tofunmi Olawuyi Samuel – Tech Name: Tosdev
-
-Personal Background:
-Born on April 22, 2006, in Otun Ekiti, currently residing in Ido Ekiti, Ekiti State, Nigeria.
-
-Education:
-1. Primary: Mother Mary Emmanuel Catholic School, Orin Ekiti
-2. Secondary: Adventist High School, Otun Ekiti and Holy Child Catholic School, Ado Ekiti
-3. University: Babcock University (2022-2026), studying Software Engineering
-
-Technical Projects:
-1. Blog Websites:
-- Built multiple blog platforms with custom CMS functionality
-- Technologies: HTML, CSS, PHP, JavaScript
-
-2. E-Learning Platforms:
-- Developed comprehensive learning management systems
-- Technologies: PHP, HTML, CSS, JavaScript
-
-3. Voting Systems:
-- Created secure online voting applications
-- Technologies: PHP, JavaScript, MySQL
-
-Portfolio: https://tosdevpor.vercel.app
-
-Technical Skills:
-- Frontend: HTML, CSS, JavaScript, React.js
-- Backend: PHP, Python, Node.js
-- Mobile: React Native
-- Databases: MySQL, MongoDB, PostgreSQL`;
+        const tosdevBio = ` your info`;
 
         document.addEventListener('DOMContentLoaded', function() {
             const chatContainer = document.getElementById('chat-container');
@@ -467,7 +438,7 @@ Technical Skills:
             let conversationHistory = JSON.parse(localStorage.getItem('tosdevChatHistory')) || [
                 {
                     role: "bot",
-                    content: "Hello! 👋 I'm Tosdev's personal chatbot. I can tell you about Tofunmi Olawuyi Samuel (Tosdev), his projects, or answer general questions. You can also check my portfolio at https://tosdevpor.vercel.app\n\nHere's one of my Instagram posts:\n![My Instagram Post](https://www.instagram.com/p/DAmAqUDu5Or/?igsh=b3hrYWx2d2RvNXN2)",
+                    content: "",
                     timestamp: new Date().toISOString()
                 }
             ];
@@ -478,7 +449,7 @@ Technical Skills:
                     conversationHistory = [
                         {
                             role: "bot",
-                            content: "Hello! 👋 I'm Tosdev's personal chatbot. I can tell you about Tofunmi Olawuyi Samuel (Tosdev), his projects, or answer general questions. You can also check my portfolio at https://tosdevpor.vercel.app\n\nHere's one of my Instagram posts:\n![My Instagram Post](https://www.instagram.com/p/DAmAqUDu5Or/?igsh=b3hrYWx2d2RvNXN2)",
+                            content: " ",
                             timestamp: new Date().toISOString()
                         }
                     ];
@@ -768,11 +739,11 @@ Technical Skills:
                             body: JSON.stringify({
                                 contents: [{
                                     parts: [{
-                                        text: `Conversation context:\n${context}\n\nYou are an assistant for Tofunmi Olawuyi Samuel (Tosdev). 
+                                        text: `Conversation context:\n${context}\n\nYou are an assistant for . 
                                         Use this information to answer questions about him and his work.
-                                        Always mention his portfolio is available at: https://tosdevpor.vercel.app
-                                        You can include images using markdown format: ![description](image-url)
-                                        For Instagram posts, use: ![My Instagram Post](https://www.instagram.com/p/DAmAqUDu5Or/?igsh=b3hrYWx2d2RvNXN2)
+                                        Always mention his portfolio is available at:
+                                        You can include images using markdown format:
+                                        For Instagram posts, use:
                                         Format your responses with:
                                         - **Bold text** for important points
                                         - *Italic text* for emphasis
@@ -788,7 +759,7 @@ Technical Skills:
                                         QUESTION: ${question}
                                         
                                         Respond concisely in 1-5 sentences. If unsure, say:
-                                        "I don't have that specific information, but you can check my portfolio at https://tosdevpor.vercel.app"
+                                        "I don't have that specific information,"
                                         `
                                     }]
                                 }]
@@ -799,11 +770,11 @@ Technical Skills:
                     if (!response.ok) throw new Error('API request failed');
                     const data = await response.json();
                     return data.candidates?.[0]?.content?.parts?.[0]?.text || 
-                           "I don't have that specific information. Check my portfolio at https://tosdevpor.vercel.app";
+                           "I don't have that specific information. ";
 
                 } catch (error) {
                     console.error("API Error:", error);
-                    return "I'm having trouble accessing that information. Please visit https://tosdevpor.vercel.app";
+                    return "I'm having trouble accessing that information.";
                 }
             }
 
@@ -823,13 +794,13 @@ Technical Skills:
                             body: JSON.stringify({
                                 contents: [{
                                     parts: [{
-                                        text: `Conversation context:\n${context}\n\nYou are an AI assistant created by Tosdev. 
+                                        text: `Conversation context:\n${context}\n\nYou are an AI assistant created by . 
                                         When providing responses:
                                         1. Format text properly using **bold**, *italic* and lists
                                         2. Use emojis where appropriate 😊
                                         3. For links, just show the full URL (it will be auto-linked)
                                         4. For images, use markdown format: ![description](image-url)
-                                        5. For Instagram posts, use: ![My Instagram Post](https://www.instagram.com/p/DAmAqUDu5Or/?igsh=b3hrYWx2d2RvNXN2)
+                                        5. For Instagram posts, use: ![My Instagram Post]()
                                         6. For code blocks, use triple backticks with language specification
                                         7. Use proper numbered or bulleted lists without showing special characters
                                         8. Keep code blocks concise and well-formatted
